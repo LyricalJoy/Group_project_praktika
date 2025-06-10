@@ -106,6 +106,7 @@
       </div>
     </div>
   </section>
+  <div style="height: 100px;"></div>
 </template>
 
 
@@ -287,5 +288,85 @@ ARTICLES
 
 .card:hover {
   box-shadow: 3px 5px 10px rgb(199, 199, 199);
+}
+
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+
+  /* Универсальные настройки */
+  body {
+    font-size: 14px;
+  }
+
+  /* Контейнеры */
+  .container {
+    padding: 0 10px;
+  }
+
+  /* Showcase */
+  .showcase {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .showcase .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .showcase .text-content {
+    padding: 0 10px;
+  }
+
+  .showcase .text-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .showcase .text-content p:nth-child(3) {
+    text-align: justify;
+  }
+
+  .showcase .text-content a {
+    padding: 8px 12px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  /* Категории */
+  .problem-category,
+  .road-category,
+  .green-category {
+    display: inline-block;
+    font-size: 0.6rem;
+    padding: 2px 12px;
+    margin: 0.3rem 0;
+  }
+
+  /* Articles grid */
+  .articles {
+    display: block;
+  }
+
+  .articles>a {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .articles>a:nth-child(1),
+  .articles>a:last-child {
+    grid-column: auto;
+  }
+
+  /* Убираем двухколоночность у карточек внутри */
+  .articles>a:nth-child(1),
+  .articles>a:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  /* Для карточек внутри */
+  .card {
+    padding: 0.8rem;
+  }
 }
 </style>

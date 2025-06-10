@@ -104,7 +104,7 @@ Remove-Item -Recurse -Force .git
 
 
 git add .
-git commit -m "Добавлен base в vite.config.js для GitHub Pages"
+git commit -m "Финалочка. Мобильная версия"
 git push
 Затем пересобери проект и заново запушь в ветку gh-pages:
 

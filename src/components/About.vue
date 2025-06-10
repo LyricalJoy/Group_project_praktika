@@ -113,7 +113,7 @@ const goToMyRequests = () => {
   background-color: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 .about article:first-child {
@@ -132,7 +132,7 @@ const goToMyRequests = () => {
   border-radius: 8px;
   margin-bottom: 1rem;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(2,138,210,0.3);
+  box-shadow: 0 4px 10px rgba(2, 138, 210, 0.3);
 }
 
 .about article h3 {
@@ -152,7 +152,7 @@ const goToMyRequests = () => {
   font-weight: 700;
   cursor: pointer;
   margin-top: 12px;
-  box-shadow: 0 6px 18px rgba(255,196,142,0.6);
+  box-shadow: 0 6px 18px rgba(255, 196, 142, 0.6);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -183,17 +183,43 @@ const goToMyRequests = () => {
   margin-bottom: 2rem;
 }
 
+/* Мобильная версия */
 @media (max-width: 768px) {
   .about {
     grid-template-columns: 1fr;
+    margin: 1rem 0;
   }
 
+  /* Убираем закрепление первого элемента */
   .about article:first-child {
     grid-row: auto;
   }
 
+  /* Добавляем отступы между статьями */
   .about article:last-child {
     margin-top: 2rem;
+    padding: 1.5rem;
+    /* Можно чуть уменьшить, если нужно */
+  }
+
+  /* Уменьшаем размеры шрифтов для улучшенной читаемости */
+  .about article:first-child h2 {
+    font-size: 1.5rem;
+  }
+
+  .about article:last-child h3 {
+    font-size: 1.2rem;
+  }
+
+  .about article p {
+    font-size: 1rem;
+  }
+
+  /* Кнопки делаем чуть меньше, чтобы не растягивали блок */
+  .submit-button,
+  .status-button {
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
 </style>

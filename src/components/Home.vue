@@ -66,26 +66,29 @@ onBeforeUnmount(() => {
 
  <h1 class="section-title">Решенные проблемы</h1>
 <div class="slider" id="slider">
-    <div class="slides" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-      <div class="slide">
-        <img src="">
-        Проблема с освещением решена</div>
-      <div class="slide">
-        <img src="">
-        Обновление асфальта завершено</div>
-      <div class="slide">
-        <img src="">
-        Высадка деревьев выполнена</div>
+  <div class="slides" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+    <div class="slide">
+      <img src="/img/one.jpg" height="450px" width="650px" />
+      <div class="slide-text">Проблема с освещением решена</div>
     </div>
-    <div class="slider-controls">
-      <span
-        v-for="(dot, index) in slidesCount"
-        :key="index"
-        class="slider-dot"
-        :class="{ active: index === currentSlide }"
-        @click="showSlide(index)"
-      ></span>
+    <div class="slide">
+      <img src="/img/two.jpg" height="450px" width="654px" />
+      <div class="slide-text">Обновление асфальта завершено</div>
     </div>
+    <div class="slide">
+      <img src="/img/three.jpg" height="450px" width="654px" />
+      <div class="slide-text">Высадка деревьев выполнена</div>
+    </div>
+  </div>
+  <div class="slider-controls">
+    <span
+      v-for="(dot, index) in slidesCount"
+      :key="index"
+      class="slider-dot"
+      :class="{ active: index === currentSlide }"
+      @click="showSlide(index)"
+    ></span>
+  </div>
 </div>
 <!-- Точки управления -->
     
@@ -100,7 +103,7 @@ onBeforeUnmount(() => {
   color: rgb(0, 0, 0);
   text-align: center;
   animation: fadeIn 1.5s ease-out;
- 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-image: url('/img/fon.png');
   background-size: cover;
   background-position: center;
@@ -133,6 +136,7 @@ onBeforeUnmount(() => {
   cursor: pointer;
   transition: all 0.4s ease;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .hero-button:hover {
   background-color: #006194;
@@ -142,10 +146,13 @@ onBeforeUnmount(() => {
 .main_counter_panel {
   display: flex;
   justify-content: space-around;
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 22px;
   border-radius: 12px;
   gap: 20px;
+  flex-wrap: wrap; /* чтобы элементы переносились при необходимости */
+  justify-content: space-around; /* равномерное распределение по горизонтали */
+
 }
 
 .counter_panel {
@@ -156,6 +163,22 @@ onBeforeUnmount(() => {
   text-align: center;
   width: 300px;
   transition: transform 0.3s;
+  flex: 1 1 auto; /* позволяет элементам расти и сжиматься */
+  min-width: 200px; /* минимальная ширина для блока, чтобы не сжимался слишком сильно */
+  margin: 10px; /* отступы между блоками */
+  text-align: center; /* центрирование текста внутри блока */
+}
+/* Мобильная версия — вертикальный ряд */
+@media (max-width: 768px) {
+  .main_counter_panel {
+    flex-direction: column; /* все блоки идут вертикально */
+    align-items: center; /* по центру по горизонтали */
+  }
+  
+  .counter_panel {
+    width: 80%; /* или любой другой размер, подходящий для мобильных */
+    margin: 10px 0; /* вертикальные отступы между блоками */
+  }
 }
 .counter_panel:hover {
   transform: scale(1.05);
@@ -189,7 +212,9 @@ onBeforeUnmount(() => {
   margin: 40px 60px;
   gap: 30px;
 }
-
+h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .counet_complet {
   background: #f7faff;
   border: 2px dashed #028AD2;
@@ -224,11 +249,12 @@ onBeforeUnmount(() => {
 /* Стили для слайдера */
 .slider {
   position: relative;
-  width: 100%;
-  height: 350px;
+  width: 85%;
+  height: 450px;
   overflow: hidden;
   background-color:#f0f0f0;
   margin-bottom: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .slides {
@@ -239,9 +265,23 @@ onBeforeUnmount(() => {
 .slide {
   min-width:100%;
   display:flex;
-  align-items:center;
+  
   justify-content:center;
   font-size:24px;
+
+  position: relative;
+  
+
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 30px; /* Расположение по вертикали */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0); /* Цвет текста */
+  background-color: rgba(167, 188, 196, 0.6); /* Полупрозрачный фон для читаемости */
+
 }
 
 /* Точки навигации */
