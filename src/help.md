@@ -104,7 +104,7 @@ Remove-Item -Recurse -Force .git
 
 
 git add .
-git commit -m "Финалочка. Мобильная версия"
+git commit -m "финалочка. здача завтра"
 git push
 Затем пересобери проект и заново запушь в ветку gh-pages:
 

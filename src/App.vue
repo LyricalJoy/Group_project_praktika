@@ -268,7 +268,7 @@ footer {
 .menu-buttons button {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 20px;
   color: #444;
   cursor: pointer;
   transition: color 0.5s;
@@ -316,6 +316,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 .main {
+  margin-top: 100px;
   padding-top: 140px; /* чтобы контент не прятался под navbar */
 }
     /* Отступ слева для иконки аккаунта */
