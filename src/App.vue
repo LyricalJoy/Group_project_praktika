@@ -321,7 +321,7 @@ footer {
 }
     /* Отступ слева для иконки аккаунта */
     .account-icon {
-    margin-left: 10px;
+    margin-right: 70px;
   }
   .navbar-top {
     padding: 10px 10px; /* убрать большие отступы */
