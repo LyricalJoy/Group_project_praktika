@@ -306,6 +306,18 @@ footer {
 
 /* Адаптация */
 @media (max-width: 720px) {
+
+  .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.main {
+  padding-top: 140px; /* чтобы контент не прятался под navbar */
+}
     /* Отступ слева для иконки аккаунта */
     .account-icon {
     margin-left: 10px;
